@@ -45,18 +45,18 @@ def guess_word(secret_word: str, chances: int):
             print("You already enter this letter")
             letter = input("Enter a letter :").lower()
         guessed_letters.append(letter)
-        if letter in secret_word:
-            print('Well done, keep going !')
-        else:
-            i += 1
-            print('Wrong letter')
         result = display_secret_word(secret_word, guessed_letters)
-        print('You have {} chances left\n'.format(chances - i))
         if result == secret_word:
             return 1
         else:
+            if letter in secret_word:
+                print('Well done, keep going !')
+            else:
+                i += 1
+                print('Wrong letter')
+            print('You have {} chances left\n'.format(chances - i))
             print(result + '\n')
-    return 0
+    return -1
 
 
 if __name__ == '__main__':
