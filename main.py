@@ -39,6 +39,8 @@ def guess_word(secret_word: str, chances: int):
     print('_' * size + '\n')
     while i < chances:
         letter = input("Enter a letter :").lower()  # make sur its lower letter
+        while letter == '':
+            letter = input("Please enter a letter :")
         while letter in guessed_letters:
             print("You already enter this letter")
             letter = input("Enter a letter :").lower()
