@@ -11,7 +11,7 @@ def load_word(path: str) -> List[str]:
         for element in data_update:
             words = element.split(' ')
             list_words.extend(words)
-
+    list_words.remove('')
     return list_words
 
 
